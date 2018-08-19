@@ -17,11 +17,11 @@ https://github.com/todorslavov/BlueTeamRepo
 
 ### Class Diagrams
 
-[Class Diagrams Repository](https://gitlab.com/nekr0s/clean-note/tree/master/diagrams)
+[Class Diagrams Repository](https://github.com/todorslavov/BlueTeamRepo/blob/master/diagram.png)
 
  * Simplified class diаgram
 
-![Simplified Class Diagram](diagrams/noteAndBoardDiagram.png "Simplified Class Diagram")
+![Simplified Class Diagram](https://github.com/todorslavov/BlueTeamRepo/blob/master/diagram.png?raw=true "Simplified Class Diagram")
 
 
 

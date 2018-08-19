@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Coach">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <ImageView
+            android:id="@+id/coach"
+            android:src="@drawable/mcoach"
+            android:layout_centerHorizontal="true"
+            android:layout_width="330dp"
+            android:layout_height="260dp" />
+        <ImageView
+            android:id="@+id/coach2"
+            android:src="@drawable/coach2"
+            android:layout_below="@+id/textcoach"
+            android:layout_centerHorizontal="true"
+            android:layout_width="330dp"
+            android:layout_height="400dp" />
+        <TextView
+            android:id="@+id/textcoach"
+            android:layout_width="wrap_content"
+android:layout_below="@+id/coach"
+            android:layout_height="wrap_content"
+            android:paddingLeft="10dp"
+            android:fontFamily="sans-serif"
+            android:text="Slaviša Stojanović (born 6 December 1969) is a former Slovenian footballer and manager. Stojanović has won the Slovenian PrvaLiga twice, with Domžale, and the Serbian championship once, with Red Star Belgrade. He is currently in charge of Bulgarian club Levski Sofia."/>
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/drawer"
+        android:layout_width="match_parent"
+        android:layout_height="40dp">
+    </android.support.v7.widget.Toolbar>
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

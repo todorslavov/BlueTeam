@@ -16,6 +16,8 @@ import com.example.todor.blueteam.Repositories.FirebaseRepository;
 import com.example.todor.blueteam.models.Player;
 import com.google.firebase.firestore.FirebaseFirestore;
 
+import java.util.List;
+
 
 /**
  * A simple {@link Fragment} subclass.
@@ -45,22 +47,18 @@ mDb=FirebaseFirestore.getInstance();
 
         mPlayersRepository = new FirebaseRepository<>(Player.class);
 
-        mPlayersRepository.getAll(players-> {
-            for (Player player : players) {
-                mPlayersAdapter.add(player.Name);
-            }
-        });
+        mDb.collection("subtitutes")
+                .get()
+                .addOnCompleteListener(task -> {
+                    List<Player> subtitutes  = task.getResult().toObjects(Player.class);
 
-//        mDb.collection("players")
-//                .get()
-//                .addOnCompleteListener(task -> {
-//                    List<Player> players = task.getResult().toObjects(Player.class);
-//
-//                    for(Player player:players)
-//                    {
-//                        mPlayersAdapter.add(player.Name);
-//                    }
-//                });
+                    for(Player player:subtitutes)
+                    {
+                        mPlayersAdapter.add(player.Name);
+                    }
+                });
+
+
 
         mPlayersListView.setOnItemClickListener(this);
 return view;

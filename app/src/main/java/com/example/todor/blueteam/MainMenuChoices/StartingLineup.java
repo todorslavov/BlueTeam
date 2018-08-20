@@ -29,7 +29,7 @@ public class StartingLineup extends Activity {
         fragment = StartingLineupFragment.newInstance();
         this.getFragmentManager()
                 .beginTransaction()
-                .replace(R.id.content, fragment)
+                .replace(R.id.content,fragment)
                 .commit();
         mToolbar=findViewById(R.id.drawer);
 setupDrawer();

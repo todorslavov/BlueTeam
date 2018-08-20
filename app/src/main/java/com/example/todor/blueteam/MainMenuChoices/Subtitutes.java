@@ -16,11 +16,18 @@ import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 public class Subtitutes extends Activity {
 
     private Toolbar mToolbar;
+    private SubtitutesFragment fragment1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_subtitutes);
+        mToolbar=findViewById(R.id.drawer);
+        fragment1=SubtitutesFragment.newInstance();
+        int commit = this.getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content1,fragment1)
+                .commit();
         mToolbar=findViewById(R.id.drawer);
         setupDrawer();
     }

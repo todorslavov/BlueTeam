@@ -1,8 +1,8 @@
 package com.example.todor.blueteam.MainMenuChoices;
 
 
+import android.app.Fragment;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -40,7 +40,7 @@ public class SubtitutesFragment extends Fragment implements AdapterView.OnItemCl
         // Inflate the layout for this fragment
         View view =inflater.inflate(R.layout.fragment_subtitutes, container, false);
         mDb= FirebaseFirestore.getInstance();
-        mSubtitutesListView = view.findViewById(R.id.lv_first_team);
+        mSubtitutesListView = view.findViewById(R.id.lv_first_team1);
         mSubtitutesAdapter = new ArrayAdapter<>(getContext(),android.R.layout.simple_list_item_1);
         mSubtitutesListView.setAdapter(mSubtitutesAdapter);
 
@@ -54,8 +54,8 @@ public class SubtitutesFragment extends Fragment implements AdapterView.OnItemCl
         mSubtitutesListView.setOnItemClickListener(this);
         return view;
     }
-    public static StartingLineupFragment newInstance(){
-        return new StartingLineupFragment();
+    public static SubtitutesFragment newInstance(){
+        return new SubtitutesFragment();
     }
 
     public void setNavigator(Navigator navigator){

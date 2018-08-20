@@ -1,4 +1,4 @@
-package com.example.todor.blueteam;
+package com.example.todor.blueteam.MainMenuChoices;
 
 
 import android.os.Bundle;
@@ -9,18 +9,19 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
+import com.example.todor.blueteam.Navigator;
+import com.example.todor.blueteam.R;
 import com.example.todor.blueteam.Repositories.FirebaseRepository;
 import com.example.todor.blueteam.models.Player;
 import com.google.firebase.firestore.FirebaseFirestore;
-
-import java.util.List;
 
 
 /**
  * A simple {@link Fragment} subclass.
  */
 public class StartingLineupFragment extends Fragment implements AdapterView.OnItemClickListener {
-    private ArrayAdapter<Player> mPlayersAdapter;
+    private ArrayAdapter<String> mPlayersAdapter;
     private FirebaseFirestore mDb;
     private FirebaseRepository<Player> mPlayersRepository;
     private ListView mPlayersListView;
@@ -46,7 +47,7 @@ mDb=FirebaseFirestore.getInstance();
 
         mPlayersRepository.getAll(players-> {
             for (Player player : players) {
-                mPlayersAdapter.add(player);
+                mPlayersAdapter.add(player.Name);
             }
         });
 
@@ -73,7 +74,7 @@ return view;
     }
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Player player = mPlayersAdapter.getItem(position);
+        String player = mPlayersAdapter.getItem(position);
         mNavigator.navigateWith(player);
     }
 }

@@ -18,11 +18,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".StartingLineup" />
-        <activity android:name=".Subtitutes" />
-        <activity android:name=".Reserves" />
-        <activity android:name=".ClubOwner" />
-        <activity android:name=".Coach"></activity>
+        <activity android:name=".MainMenuChoices.StartingLineup" />
+        <activity android:name=".MainMenuChoices.Subtitutes" />
+        <activity android:name=".MainMenuChoices.Reserves" />
+        <activity android:name=".MainMenuChoices.ClubOwner" />
+        <activity android:name=".MainMenuChoices.Coach"></activity>
     </application>
 
 </manifest>

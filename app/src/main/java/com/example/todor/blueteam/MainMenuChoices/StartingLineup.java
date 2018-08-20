@@ -1,29 +1,39 @@
-package com.example.todor.blueteam;
+package com.example.todor.blueteam.MainMenuChoices;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
 
+import com.example.todor.blueteam.R;
+import com.google.firebase.firestore.FirebaseFirestore;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class Reserves extends Activity {
+public class StartingLineup extends Activity {
+    private ArrayAdapter<String> mPlayersAdapter;
+    private FirebaseFirestore mDB;
+    private StartingLineupFragment fragment;
+    private android.support.v7.widget.Toolbar mToolbar;
 
-    private Toolbar mToolbar;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_reserves);
+        setContentView(R.layout.activity_starting_lineup);
+        fragment = StartingLineupFragment.newInstance();
+        this.getFragmentManager()
+                .beginTransaction()
+                .replace(R.id.content, fragment)
+                .commit();
         mToolbar=findViewById(R.id.drawer);
-        setupDrawer();
-    }
+setupDrawer();
+}
     public void setupDrawer(){
         PrimaryDrawerItem item1 = new PrimaryDrawerItem().withIdentifier(1).withName("Starting Lineup");
         PrimaryDrawerItem item2 = new PrimaryDrawerItem().withIdentifier(2).withName("Subtitutes");
@@ -52,19 +62,19 @@ public class Reserves extends Activity {
                         long idfier=drawerItem.getIdentifier();
                         Intent intent;
                         if(idfier==1) {
-                            intent=new Intent(Reserves.this,StartingLineup.class);
+                            intent=new Intent(StartingLineup.this,StartingLineup.class);
                         }
                         else if(idfier==2){
-                            intent=new Intent(Reserves.this,Subtitutes.class);
+                            intent=new Intent(StartingLineup.this,Subtitutes.class);
                         }
                         else if(idfier==3){
-                            intent=new Intent(Reserves.this,Reserves.class);
+                            intent=new Intent(StartingLineup.this,Reserves.class);
                         }
                         else if(idfier==4){
-                            intent=new Intent(Reserves.this,Coach.class);
+                            intent=new Intent(StartingLineup.this,Coach.class);
                         }
                         else if(idfier==5){
-                            intent=new Intent(Reserves.this,ClubOwner.class);
+                            intent=new Intent(StartingLineup.this,ClubOwner.class);
                         }else {
                             return false;
                         }
@@ -73,5 +83,5 @@ public class Reserves extends Activity {
                     }
                 })
                 .build();
-    }
+}
 }

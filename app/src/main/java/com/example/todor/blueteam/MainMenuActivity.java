@@ -3,11 +3,14 @@ package com.example.todor.blueteam;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.annotation.NonNull;
 import android.support.v7.widget.CardView;
-import android.view.MenuItem;
 import android.view.View;
-import android.widget.TextView;
+
+import com.example.todor.blueteam.MainMenuChoices.ClubOwner;
+import com.example.todor.blueteam.MainMenuChoices.Coach;
+import com.example.todor.blueteam.MainMenuChoices.Reserves;
+import com.example.todor.blueteam.MainMenuChoices.StartingLineup;
+import com.example.todor.blueteam.MainMenuChoices.Subtitutes;
 
 public class MainMenuActivity extends Activity implements View.OnClickListener {
 CardView startingLineup,subtitutes,reserves,clubOwner,coach;

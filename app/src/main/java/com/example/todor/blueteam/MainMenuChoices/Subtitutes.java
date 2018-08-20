@@ -1,4 +1,4 @@
-package com.example.todor.blueteam;
+package com.example.todor.blueteam.MainMenuChoices;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -6,20 +6,21 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 
+import com.example.todor.blueteam.R;
 import com.mikepenz.materialdrawer.Drawer;
 import com.mikepenz.materialdrawer.DrawerBuilder;
 import com.mikepenz.materialdrawer.model.DividerDrawerItem;
 import com.mikepenz.materialdrawer.model.PrimaryDrawerItem;
 import com.mikepenz.materialdrawer.model.interfaces.IDrawerItem;
 
-public class ClubOwner extends Activity {
+public class Subtitutes extends Activity {
 
     private Toolbar mToolbar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_club_owner);
+        setContentView(R.layout.activity_subtitutes);
         mToolbar=findViewById(R.id.drawer);
         setupDrawer();
     }
@@ -51,23 +52,24 @@ public class ClubOwner extends Activity {
                         long idfier=drawerItem.getIdentifier();
                         Intent intent;
                         if(idfier==1) {
-                            intent=new Intent(ClubOwner.this,StartingLineup.class);
+                            intent=new Intent(Subtitutes.this,StartingLineup.class);
                         }
                         else if(idfier==2){
-                             intent=new Intent(ClubOwner.this,Subtitutes.class);
+                            intent=new Intent(Subtitutes.this
+                                    ,Subtitutes.class);
                         }
                         else if(idfier==3){
-                            intent=new Intent(ClubOwner.this,Reserves.class);
+                            intent=new Intent(Subtitutes.this,Reserves.class);
                         }
                         else if(idfier==4){
-                            intent=new Intent(ClubOwner.this,Coach.class);
+                            intent=new Intent(Subtitutes.this,Coach.class);
                         }
                         else if(idfier==5){
-                            intent=new Intent(ClubOwner.this,ClubOwner.class);
+                            intent=new Intent(Subtitutes.this,ClubOwner.class);
                         }else {
                             return false;
                         }
-                    startActivity(intent);
+                        startActivity(intent);
                         return true;
                     }
                 })
